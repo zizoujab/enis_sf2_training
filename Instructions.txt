@@ -1,0 +1,2 @@
+1. open a browser 
+2. go to this url http://localhost/enis_sf2_training/http.php?foo=zizoujab
