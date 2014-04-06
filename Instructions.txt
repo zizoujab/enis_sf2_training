@@ -1,3 +1,5 @@
+if you have succesfully applied instructions in step-2 then you need nothing to do 
+otherwise follow those ( the same instructions of step-2)
 1. open phpmyadmin (http://localhost/phpmyadmin) and type your login and password
 2. click on Import tab 
 3. import the file 'blog_db.sql'
