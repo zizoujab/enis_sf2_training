@@ -1,2 +1,8 @@
-1. open a browser 
-2. go to this url http://localhost/enis_sf2_training/http.php?foo=zizoujab
+1. open phpmyadmin (http://localhost/phpmyadmin) and type your login and password
+2. click on Import tab 
+3. import the file 'blog_db.sql'
+4. click on go ( you should have a green message, if it's red then you are in trouble :P)
+5. open index.php and edit this line ( line number 3 ): 
+   $link = mysql_connect('localhost', 'your_login', 'your_password');
+change 'your_login' with your mysql login ( 'root' in most cases ) and 'your_password' with your password ('' in most cases )
+6. that's all , now go to http://localhost/enis/index.php, you will have the list of posts
