@@ -1,23 +1,22 @@
 <?php
 // index.php
 // load and initialize any global libraries
-require_once 'model.php';
-require_once 'controllers.php';
+require_once 'vendor/autoload.php';
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
-$uri  = $_SERVER['REQUEST_URI'];
-if ('/enis/index.php' == $uri ){
-    list_action();
-} elseif ( startsWith( $uri,'/enis/index.php/show')  && isset($_GET['id'])){
-    show_action($_GET['id']);
+$request = Request::createFromGlobals();
+
+
+$uri  = $request->getPathInfo();
+if ('/' == $uri ){
+    $response = list_action();
+} elseif ('/show' == $uri && $request->query->has('id')){
+   $response =  show_action($request->query->get('id'));
 } else {
-    header('Status : 404 not found');
-    echo '<html><body><h1>Page Not Found</h1></body></html>';
+    $html =  '<html><body><h1>Page Not Found</h1></body></html>';
+    $response = new Response($html,Response::HTTP_NOT_FOUND);
 }
-
-
-// helper method 
-function startsWith($haystack, $needle)
-{
-    return $needle === "" || strpos($haystack, $needle) === 0;
-}
+// sending the response to the client 
+$response->send();
 ?>

@@ -1,10 +1,9 @@
-if you have succesfully applied instructions in step-2 then you need nothing to do 
-otherwise follow those ( the same instructions of step-2)
-1. open phpmyadmin (http://localhost/phpmyadmin) and type your login and password
-2. click on Import tab 
-3. import the file 'blog_db.sql'
-4. click on go ( you should have a green message, if it's red then you are in trouble :P)
-5. open index.php and edit this line ( line number 3 ): 
-   $link = mysql_connect('localhost', 'your_login', 'your_password');
-change 'your_login' with your mysql login ( 'root' in most cases ) and 'your_password' with your password ('' in most cases )
-6. that's all , now go to http://localhost/enis/index.php, you will have the list of posts
+you need composer in this step , you can get it here if you dont already have it
+https://getcomposer.org/download/
+
+now go to your project directory ( enis )
+open a command window ( or a terminal ) and run the folloing : 
+- for windows : 
+composer install
+- for linux :  
+php composer.phar install 
